@@ -2,30 +2,30 @@
   <div class="titulo">
     <h1 class="animated fadeInUp">Nuestras estrellas</h1>
   </div>
-  <div class="buscador">
+</div>
+
+
+<div class="filtro-container" >
+  
+  <div class="buscador-container">
     <img src="../../../assets/search.png" class="icon-search" alt="logo">
     <input class="form-control" class="inputClass" type="text" placeholder="Buscar Estrella" [formControl]="searchFC">
   </div>
+  
+  <div class="form-container"class="options">
+    <form [formGroup]="form">
+      <select formControlName="universidad">
+          <option [ngValue]="null" disabled>Seleccione universidad</option>
+          <option *ngFor="let uni of universidades;let index=index"  [ngValue]="uni.nombre">
+            {{uni.nombre}}  
+          </option>
+      </select>
+    </form>
+  </div>
+  
 </div>
 
-<div class="select-container">
-  <form [formGroup]="form">
-    <select formControlName="universidad" [(ngModel)]='nrSelect' >
-        <option [ngValue]="null" disabled>Seleccione</option>
-        <option *ngFor="let uni of universidades;let index=index"  [ngValue]="uni.nombre">
-          {{uni.nombre}}  
-        </option>
-    </select>
-  </form>
-  <p>Form value: {{ form.value | json }}</p> 
-</div>
 
-
- 
-<div class="buscador-universidad">
-  <img src="../../../assets/search.png" class="icon-search" alt="logo">
-  <input type="text" class="inputClass" placeholder="Buscar Universidad" [formControl]="searchFCU">
-</div>
 
 <div *ngIf="stars.length <= 0 else Stars">
   No hay estreshas
@@ -40,7 +40,7 @@
           <div class="texto-encima">
             <div>
               <img src="../assets/star.svg" class="contenedor" alt="">
-              <p style="position: relative;margin-top: -25px;left: 50%;transform: translate(-50%, -50%)">
+              <p style="position: relative;color:rgb(255, 255, 255);margin-top: -25px;left: 50%;transform: translate(-50%, -50%)">
                 {{ star.ranking }}
               </p>
             </div>
@@ -58,9 +58,15 @@
        
       </mat-card>
     </section>
-    <div class="contenido">
+   
+    <div class="contenido" *ngIf="!esUniversidad">
       <button (click)="showNextPage()" [ngStyle]="buttonStyle()" [disabled]="hasReachedLimit">Ver mas xd</button>
     </div>
+
+    <div class="contenido" *ngIf="esUniversidad">
+      <button (click)="showNextPageSelect()" [ngStyle]="buttonStyle()" [disabled]="hasReachedLimit">Ver mas universidades xd</button>
+    </div>
+
 </div>
 </ng-template>
 

@@ -18,6 +18,7 @@ import { starsListAnimation } from './stars-list.animation';
 export class StarsComponent implements OnInit {
   inicio: number = 0;
   stars: any[] = [];
+  esUniversidad:boolean = false;
   lleno: boolean = false;
 
   nrSelect = null;
@@ -126,15 +127,25 @@ export class StarsComponent implements OnInit {
     this.hasReachedLimit = pageResult.hasReachedLimit;
     this.currentPage = page;
   }
+
+  
+  showNextPageSelect(){
+    this.getPageAndConcatToCurrentListSelect(this.currentPage + 1);
+  }
  
   getPageAndConcatToCurrentListSelect(page: number) { 
-    console.log(this.form.value.universidad);
     
     const pageResult = this.svcStar.getPageUniverisdad(page, this.pageSize,this.form.value.universidad);  
     this.stars = this.stars.concat(pageResult.result);
+    if(this.form.value.universidad === ''){      
+      this.esUniversidad = false;
+    }else{
+      this.esUniversidad = true;
+    }
     this.hasReachedLimit = pageResult.hasReachedLimit;
     this.currentPage = page;
   }
+
 
   showNextPage() {
     this.getPageAndConcatToCurrentListStar(this.currentPage + 1);

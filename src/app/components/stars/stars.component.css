@@ -22,13 +22,13 @@
   width: auto;
   top: 50%;
   transform: translateY(-50%);
-  left: 10px;
+  padding: 2px 8px;
 }
 
 
 .inputClass{
-  text-align: center;
-  width: 100%;
+  text-align: center; 
+  width: 450px;
 }
 
 .container-titulo{
@@ -38,12 +38,13 @@
  
 
 .titulo {
-  width: 50%;
+  width: 100%;
   height: 80px;
-  background: rgb(71, 71, 70);
-  color: #fff;
+  background:#FFF;
+  color: #1A1A1A;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-size: 45px;
+  opacity: 1;
   padding:20px 20px;
 }
 .card {
@@ -84,7 +85,7 @@ button {
 /*INPUT*/
 input {
   width: 100%;
-  height: 80px;
+  height: 50px;
 }
 
 /*ANIMACIONES*/
@@ -126,6 +127,109 @@ input {
 }
 
 
+.example-header-image {
+  border-radius: 100%;
+  background-size: cover;
+}
+
+.flex-university{
+  display: flex;
+}
+
+.flex-ranking{
+  display: flex;
+  justify-content: center;
+}
+
+.contenedor{
+  width: 100%;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.texto-encima{
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+.centrado{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.texto-debajo{
+  width: 90%;
+  height: 70px;
+  background-image: linear-gradient(to bottom,rgba(255,0,0,0), rgb(0, 0, 0));
+  position: absolute;
+  top: 85%;
+  left: 50%;
+  padding: 0;
+  transform: translate(-50%, -50%);
+}
+
+/*
+.texto-debajo:hover{
+  background: rgb(#000,.8);
+  transform: translateY(-50px);
+  transition: all .5s;
+}
+*/
+.datos-star{
+  color:white;
+  opacity: 1;
+}
+
+p{
+  font-family: 'Lato', sans-serif;
+}
+
+
+.filtro-container{
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.form-container select{ 
+  width: 50%;
+  margin-left: 40px;
+}
+
+
+.options {
+  width: 300px;
+  height: 50px;
+  border: 1px solid #e5e5e5;
+  margin-top: 10px;
+}
+
+.options  select {
+  margin-top: 10px;
+  height: 30px;
+  font-size: 14px;
+  border: none;
+  width: 100%;
+  background: white;
+}
+
+.form-container{
+  width: 50%;
+  height: 40px;
+}
+.buscador-container{
+  width: 50%;
+  padding: 10px 10px;
+  display: flex;
+  position: relative;
+  width: 50%; 
+  margin-bottom: 10px;
+}
+
+
+
 @media only screen and(max-width:350px ){
   .container-titulo{
     flex-direction: column;
@@ -160,13 +264,21 @@ input {
   .card {
     width: 50%;
   }
+
+  .filtro-container{
+    flex-direction: column;
+  }
+  .buscador-container,.form-container{
+    width: 100%;
+    text-align: center;
+  }
 }
 
 
 @media only screen and (min-width: 650px) {
   
   .titulo{
-    width: 50%;
+    width: 100%;
     text-align: center;  
     margin-bottom: 10px;
   }
@@ -187,7 +299,7 @@ input {
     width: 40%;
   }
   .titulo{
-    width: 50%;
+    width: 100%;
     margin-right: 5px;
     text-align: center;  
     margin-bottom: 10px;
@@ -197,69 +309,3 @@ input {
   }
 }
 
-
-
-.example-header-image {
-  border-radius: 100%;
-  background-size: cover;
-}
-
-.flex-university{
-  display: flex;
-}
-
-.flex-ranking{
-  display: flex;
-  justify-content: center;
-}
-
-.contenedor{
-  width: 100%;
-  position: relative;
-  display: inline-block;
-  text-align: center;
-}
-
-.texto-encima{
-  position: absolute;
-  top: 10px;
-  left: 10px;
-}
-.centrado{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-.texto-debajo{
-  width: 80%;
-  position: absolute;
-  top: 80%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.texto-debajo:hover{
-  background: rgb(#000,.8);
-  transform: translateY(-50px);
-  transition: all .5s;
-}
-
-.datos-star{
-  color:white;
-  opacity: 1;
-}
-
-p{
-  font-family: 'Lato', sans-serif;
-}
-
-
-.select-container{
-  display: flex;
-  width: 50%;
-}
-.select-container select{
-  width: 50%;
-  margin-left: 40px;
-}

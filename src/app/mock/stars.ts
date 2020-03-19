@@ -165,5 +165,14 @@ export const stars = [
       'https://www.realmadrid.com/img/vertical_380px/carvajal_380x501_20191221090919.jpg',
     universidad:'callao',
     ranking:'18'
+  },
+  {
+    id: Math.random(),
+    nombre: 'ricardo',
+    apellido: 'Tovar',
+    image:
+      'https://www.realmadrid.com/img/vertical_380px/carvajal_380x501_20191221090919.jpg',
+    universidad:'san marcos',
+    ranking:'19'
   }
 ];
